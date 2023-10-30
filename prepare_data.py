@@ -1,8 +1,16 @@
 from utils import *
 
-download_data(data_folder="/media/ssd/transformer data")
+DATA_FOLDER_PATH = r"C:\MyCode\Dataset\Transformer_Data"
 
-prepare_data(data_folder="/media/ssd/transformer data",
+
+# this function have bug on wget, 
+# this means that the data can not be download properly from the provided url.
+# to solve this problem, simply download the url, 
+# and put all zipped files into DATA_FOLDER_PATH/tar files folder to activate the rest of the code.
+
+download_data(data_folder=DATA_FOLDER_PATH)
+
+prepare_data(data_folder=DATA_FOLDER_PATH,
              euro_parl=True,
              common_crawl=True,
              news_commentary=True,
